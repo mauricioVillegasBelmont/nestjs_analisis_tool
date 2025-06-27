@@ -1,0 +1,7 @@
+{
+  "name": "nestjs-schematics",
+  "version": "0.0.1",
+  "schematics": "./collection.json",
+  "main": "./custom-resource/index.js",
+  "dependencies": {}
+}
