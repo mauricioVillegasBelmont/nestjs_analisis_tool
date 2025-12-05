@@ -6,7 +6,7 @@ import { PythonShell } from 'python-shell';
 export class PyServicesService {
   ps_options ={
     pythonPath: process.env.PYTHON_PATH || 'python3',
-    scriptPath: join(__dirname,'../..','src/py_services/scripts'),
+    scriptPath: join(__dirname,'../..','py_services/scripts'),
   }
 
   async pdf_file_to_html(app_dir, pdf_file, assets_path, output_path, output_filename) {
@@ -30,13 +30,13 @@ export class PyServicesService {
         args: [assets_path, prefix], // assets_path, filename_prefix
         stdio: ['pipe', 'pipe', 'pipe']
       })
-  
+
       let htmlResult = '';
       pyshell.stdout?.on('data', data => htmlResult += data.toString());
       pyshell.stderr?.on('data', err =>  reject(err));
       pyshell.stderr?.on('error', err =>  reject(err));
       pyshell.on('close', () => resolve(htmlResult));
-      
+
       pyshell.stdin?.write(file.buffer);
       pyshell.stdin?.end();
     })

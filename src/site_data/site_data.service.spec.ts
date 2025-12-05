@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { SiteDataService } from './site_data.service';
+import { SiteDataService } from 'site_data/site_data.service';
 
 describe('SiteDataService', () => {
   let service: SiteDataService;

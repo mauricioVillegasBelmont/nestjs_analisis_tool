@@ -1,6 +1,6 @@
 
 import { DataSource } from 'typeorm';
-import { Documents } from './documents.entity';
+import { Documents } from '../entities/documents.entity';
 
 export const documentsProviders = [
   {

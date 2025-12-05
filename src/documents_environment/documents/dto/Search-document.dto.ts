@@ -1,8 +1,8 @@
 import { IntersectionType } from '@nestjs/mapped-types';
 import { Transform } from 'class-transformer';
 import { IsBoolean, IsOptional, IsString } from 'class-validator';
-import {CollectionCommonDto} from 'src/common/dto/collection-common.dto';
-import { FiltersDocumentDto } from './Select-document.dto';
+import { CollectionCommonDto } from 'common/dto/collection-common.dto';
+import { FiltersDocumentDto } from 'documents_environment/documents/dto/Select-document.dto';
 
 export class KeywordsDocumentDto {
   @IsString()
@@ -13,5 +13,3 @@ export class SearchFromDocumentDto extends IntersectionType(
   FiltersDocumentDto,
   KeywordsDocumentDto,
 ) {}
-
-  

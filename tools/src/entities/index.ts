@@ -1,7 +1,10 @@
 // schematics cli/schematics:typeOrmGenerator --name my-custom-resource
 // nest g type-orm-generator nombre --collection=nestjs-schematics
+// nest g type-orm-generator keywords
 const path = require("path");
 import { Rule, SchematicContext, Tree, chain } from '@angular-devkit/schematics';
+import schema from './schema.json';
+console.log(schema)
 
 function capitalize(s:string):string{
   return String(s[0]).toUpperCase() + String(s).slice(1);
@@ -11,7 +14,7 @@ export function typeOrmEntities(options: any): Rule {
   return (tree: Tree, _context: SchematicContext) => {
     const { name } = options;
     tree.create(
-      `src/${name}/${name}.entity.ts`,
+      `src/${name}/test/${name}.entity.ts`,
       `
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 @Entity()
@@ -30,7 +33,7 @@ export function typeOrmProviders(options: any): Rule {
       // Generate files based on options (e.g., name, etc.)
     const { name } = options;
     tree.create(
-      `src/${name}/${name}.providers.ts`,
+      `src/${name}/test/${name}.providers.ts`,
       `
 import { DataSource } from 'typeorm';
 import { ${capitalize(name)} } from './${name}.entity';

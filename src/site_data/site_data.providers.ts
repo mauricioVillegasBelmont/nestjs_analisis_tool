@@ -1,6 +1,5 @@
-
 import { DataSource } from 'typeorm';
-import { Site_data } from './site_data.entity';
+import { Site_data } from 'site_data/site_data.entity';
 
 export const site_dataProviders = [
   {

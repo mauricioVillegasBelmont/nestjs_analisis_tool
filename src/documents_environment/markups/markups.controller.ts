@@ -1,7 +1,15 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
-import { MarkupsService } from './markups.service';
-import { CreateMarkupDto } from './dto/create-markup.dto';
-import { UpdateMarkupDto } from './dto/update-markup.dto';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
+import { MarkupsService } from 'documents_environment/markups/markups.service';
+import { CreateMarkupDto } from 'documents_environment/markups/dto/create-markup.dto';
+import { UpdateMarkupDto } from 'documents_environment/markups/dto/update-markup.dto';
 
 @Controller('markups')
 export class MarkupsController {

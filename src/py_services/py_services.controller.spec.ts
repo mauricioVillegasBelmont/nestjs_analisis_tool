@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { PyServicesController } from './py_services.controller';
+import { PyServicesController } from 'py_services/py_services.controller';
 
 describe('PyServicesController', () => {
   let controller: PyServicesController;

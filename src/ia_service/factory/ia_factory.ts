@@ -1,6 +1,10 @@
-import  DeepseekAPI  from '../providers/DeepSeekAPI';
-import {IACleanResponse, IAConfig, IAProvider, IAResponse} from './ia_service.types';
-
+import DeepseekAPI from 'ia_service/providers/DeepSeekAPI';
+import type {
+  IACleanResponse,
+  IAConfig,
+  IAProvider,
+  IAResponse,
+} from 'ia_service/factory/ia_service.types';
 
 
 
@@ -9,12 +13,12 @@ export class IAFactory{
   private service: DeepseekAPI;
   private serviceName: IAProvider;
 
-	
-	
+
+
 	constructor(serviceProvider = 'deepseek'){
 		this.set(serviceProvider);
 	}
-	
+
 	/**
 	* @param string message
 	* @return string
@@ -32,13 +36,13 @@ export class IAFactory{
 	public cleanResponse(responces):IACleanResponse {
 		return this.service.cleanResponse(responces)
 	}
-		
+
 	/**
 	* @param string message
 	* @return string
 	*/
 	public query(query, config:IAConfig = {}):Promise<IAResponse>{
-    try{ 
+    try{
       if (!query) {
         throw new Error("User message query is required");
       }
@@ -52,5 +56,5 @@ export class IAFactory{
     	throw new Error( `Caught error: ${e.message}`);
     }
 	}
-	
+
 }

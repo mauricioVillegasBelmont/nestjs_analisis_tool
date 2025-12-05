@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { GOOGLE_AUTH } from 'src/g_services/g_auth/g_auth.provider';
+import { GOOGLE_AUTH } from 'g_services/g_auth/g_auth.provider';
 import { google, sheets_v4 } from 'googleapis';
 import { GoogleAuth } from 'google-auth-library';
 
@@ -10,14 +10,14 @@ export class GsheetsService {
 
   constructor(@Inject(GOOGLE_AUTH) private readonly googleAuth: GoogleAuth) {}
 
-  async onModuleInit() {
+  onModuleInit() {
     this.sheets = google.sheets({ version: 'v4', auth: this.googleAuth });
   }
-  
-  test(spreadsheetId:string){
-    const spreadsheet = this.sheets.spreadsheets.get({
+
+  async test(spreadsheetId: string): Promise<any> {
+    const response: any = await this.sheets.spreadsheets.get({
       spreadsheetId: spreadsheetId,
-    })
-    return spreadsheet;
+    });
+    return response;
   }
 }

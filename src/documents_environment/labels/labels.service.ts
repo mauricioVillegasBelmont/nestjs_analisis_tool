@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { CreateLabelDto } from './dto/create-label.dto';
-import { UpdateLabelDto } from './dto/update-label.dto';
+import { CreateLabelDto } from 'documents_environment/labels/dto/create-label.dto';
+import { UpdateLabelDto } from 'documents_environment/labels/dto/update-label.dto';
 
 @Injectable()
 export class LabelsService {

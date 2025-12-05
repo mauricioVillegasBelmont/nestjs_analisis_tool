@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { CreateExternalAssetDto } from './dto/create-external_asset.dto';
-import { UpdateExternalAssetDto } from './dto/update-external_asset.dto';
+import { CreateExternalAssetDto } from 'documents_environment/external_assets/dto/create-external_asset.dto';
+import { UpdateExternalAssetDto } from 'documents_environment/external_assets/dto/update-external_asset.dto';
 
 @Injectable()
 export class ExternalAssetsService {

@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.json",
+  "include": ["tools/src/**/*.ts"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "rootDir": "./tools/src",
+    "outDir": "./tools/schematics",
+    "target": "es2022",
+    "module": "commonjs",
+    "strict": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "removeComments": true,
+    "forceConsistentCasingInFileNames": true
+  }
+}

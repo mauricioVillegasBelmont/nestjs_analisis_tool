@@ -1,6 +1,6 @@
 
 import { DataSource } from 'typeorm';
-import { External_assets } from './external_assets.entity';
+import { External_assets } from '../entity/external_assets.entity';
 
 export const external_assetsProviders = [
   {

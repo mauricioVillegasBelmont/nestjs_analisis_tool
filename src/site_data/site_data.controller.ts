@@ -1,7 +1,15 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
-import { SiteDataService } from './site_data.service';
-import { CreateSiteDatumDto } from './dto/create-site_datum.dto';
-import { UpdateSiteDatumDto } from './dto/update-site_datum.dto';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
+import { SiteDataService } from 'site_data/site_data.service';
+import { CreateSiteDatumDto } from 'site_data/dto/create-site_datum.dto';
+import { UpdateSiteDatumDto } from 'site_data/dto/update-site_datum.dto';
 
 @Controller('site-data')
 export class SiteDataController {
@@ -23,7 +31,10 @@ export class SiteDataController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateSiteDatumDto: UpdateSiteDatumDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updateSiteDatumDto: UpdateSiteDatumDto,
+  ) {
     return this.siteDataService.update(+id, updateSiteDatumDto);
   }
 

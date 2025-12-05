@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { ExternalAssetsController } from './external_assets.controller';
-import { ExternalAssetsService } from './external_assets.service';
+import { ExternalAssetsController } from 'documents_environment/external_assets/external_assets.controller';
+import { ExternalAssetsService } from 'documents_environment/external_assets/external_assets.service';
 
 describe('ExternalAssetsController', () => {
   let controller: ExternalAssetsController;

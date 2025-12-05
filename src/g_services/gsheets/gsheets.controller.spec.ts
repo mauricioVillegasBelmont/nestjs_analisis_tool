@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { GsheetsController } from './gsheets.controller';
+import { GsheetsController } from 'g_services/gsheets/gsheets.controller';
 
 describe('GsheetsController', () => {
   let controller: GsheetsController;

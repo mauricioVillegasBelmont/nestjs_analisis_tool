@@ -1,5 +1,5 @@
 import { Controller, Get, Render } from '@nestjs/common';
-import { AppService } from './app.service';
+import { AppService } from 'src/app.service';
 
 @Controller()
 export class AppController {
@@ -8,7 +8,7 @@ export class AppController {
   @Get()
   @Render('index')
   root() {
-    return { 
+    return {
       title: 'puto',
       message: 'Hello world!',
     };

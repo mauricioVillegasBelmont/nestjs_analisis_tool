@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { SiteDataController } from './site_data.controller';
-import { SiteDataService } from './site_data.service';
+import { SiteDataController } from 'site_data/site_data.controller';
+import { SiteDataService } from 'site_data/site_data.service';
 
 describe('SiteDataController', () => {
   let controller: SiteDataController;

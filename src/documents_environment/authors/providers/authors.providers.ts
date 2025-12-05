@@ -1,6 +1,5 @@
-
 import { DataSource } from 'typeorm';
-import { Authors } from './authors.entity';
+import { Authors } from 'documents_environment/authors/entities/authors.entity';
 
 export const authorsProviders = [
   {

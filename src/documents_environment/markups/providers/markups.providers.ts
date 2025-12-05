@@ -1,6 +1,6 @@
 
 import { DataSource } from 'typeorm';
-import { Markups } from './markups.entity';
+import { Markups } from '../entities/markups.entity';
 
 export const markupsProviders = [
   {

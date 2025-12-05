@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { DbpediaController } from './dbpedia.controller';
+import { DbpediaController } from 'dbpedia/dbpedia.controller';
 
 describe('DbpediaController', () => {
   let controller: DbpediaController;

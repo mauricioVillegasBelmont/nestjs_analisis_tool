@@ -10,7 +10,6 @@
     "target": "es2022",
     "sourceMap": true,
     "outDir": "./dist",
-    "baseUrl": "./",
     "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": true,
@@ -18,7 +17,18 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
-    "moduleResolution":"node"
+    /* Path aliases */
+    "paths": {
+      "src/*": ["./src/*"],
+      "common/*": ["./src/common/*"],
+      "database/*": ["./src/database/*"],
+      "dbpedia/*": ["./src/dbpedia/*"],
+      "documents_environment/*": ["./src/documents_environment/*"],
+      "g_services/*": ["./src/g_services/*"],
+      "ia_service/*": ["./src/ia_service/*"],
+      "py_services/*": ["./src/py_services/*"],
+      "site_data/*": ["./src/site_data/*"],
+    }
   },
   "include": [
     "src/**/*.ts",

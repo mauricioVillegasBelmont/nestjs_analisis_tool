@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
-import { MarkupsService } from './markups.service';
-import { MarkupsController } from './markups.controller';
+import { MarkupsService } from 'documents_environment/markups/markups.service';
+import { MarkupsController } from 'documents_environment/markups/markups.controller';
 
-import { DatabaseModule } from 'src/database/database.module';
-import { markupsProviders } from './markups.providers';
+import { DatabaseModule } from 'database/database.module';
+import { markupsProviders } from 'documents_environment/markups/providers/markups.providers';
 
 @Module({
   imports: [DatabaseModule],

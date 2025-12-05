@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { DbpediaService } from './dbpedia.service';
+import { DbpediaService } from 'dbpedia/dbpedia.service';
 
 describe('DbpediaService', () => {
   let service: DbpediaService;

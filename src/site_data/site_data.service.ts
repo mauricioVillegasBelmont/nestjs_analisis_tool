@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { CreateSiteDatumDto } from './dto/create-site_datum.dto';
-import { UpdateSiteDatumDto } from './dto/update-site_datum.dto';
+import { CreateSiteDatumDto } from 'site_data/dto/create-site_datum.dto';
+import { UpdateSiteDatumDto } from 'site_data/dto/update-site_datum.dto';
 
 @Injectable()
 export class SiteDataService {

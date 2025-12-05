@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { GsheetsService } from './gsheets.service';
+import { GsheetsService } from 'g_services/gsheets/gsheets.service';
 
 describe('GsheetsService', () => {
   let service: GsheetsService;

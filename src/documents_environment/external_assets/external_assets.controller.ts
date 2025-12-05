@@ -1,7 +1,15 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
-import { ExternalAssetsService } from './external_assets.service';
-import { CreateExternalAssetDto } from './dto/create-external_asset.dto';
-import { UpdateExternalAssetDto } from './dto/update-external_asset.dto';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
+import { ExternalAssetsService } from 'documents_environment/external_assets/external_assets.service';
+import { CreateExternalAssetDto } from 'documents_environment/external_assets/dto/create-external_asset.dto';
+import { UpdateExternalAssetDto } from 'documents_environment/external_assets/dto/update-external_asset.dto';
 
 @Controller('external-assets')
 export class ExternalAssetsController {
@@ -23,7 +31,10 @@ export class ExternalAssetsController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateExternalAssetDto: UpdateExternalAssetDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updateExternalAssetDto: UpdateExternalAssetDto,
+  ) {
     return this.externalAssetsService.update(+id, updateExternalAssetDto);
   }
 

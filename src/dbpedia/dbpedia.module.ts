@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { DbpediaController } from './dbpedia.controller';
-import { DbpediaService } from './dbpedia.service';
+import { DbpediaController } from 'dbpedia/dbpedia.controller';
+import { DbpediaService } from 'dbpedia/dbpedia.service';
 
 @Module({
   controllers: [DbpediaController],

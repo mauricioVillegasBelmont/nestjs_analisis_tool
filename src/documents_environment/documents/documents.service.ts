@@ -1,8 +1,8 @@
 import { Inject, Injectable, NotFoundException } from '@nestjs/common';
 import { ILike, Repository } from 'typeorm';
-import { Documents } from './documents.entity';
-import { CreateDocumentDto } from './dto/create-document.dto';
-import { UpdateDocumentDto } from './dto/update-document.dto';
+import { Documents } from 'documents_environment/documents/entities/documents.entity';
+import { CreateDocumentDto } from 'documents_environment/documents/dto/create-document.dto';
+import { UpdateDocumentDto } from 'documents_environment/documents/dto/update-document.dto';
 
 @Injectable()
 export class DocumentsService {
@@ -12,9 +12,9 @@ export class DocumentsService {
   ) {}
   private queryHelper(queryParams){
     const {name=true,type=true,content=true,url=true,processed=true,created=true,limit = 500,offset=0,orderBy='id',order='ASC'} = queryParams
-    
+
     const selectParams = {
-      documents_id: true,
+      document_id: true,
       name: name,
       content: content,
       type: type,
@@ -23,7 +23,7 @@ export class DocumentsService {
       processed: processed,
     }
     const orderParams = {}
-    orderParams[orderBy!='id'?orderBy:`documents_id`] = order;
+    orderParams[orderBy!='id'?orderBy:`document_id`] = order;
 
     return {
       select:{...selectParams},
@@ -35,7 +35,7 @@ export class DocumentsService {
 
 
   async search(
-    queryParams, 
+    queryParams,
   ):Promise<Documents[] | null> {
     const query = this.queryHelper(queryParams);
     const keywords = queryParams.keywords
@@ -76,7 +76,7 @@ export class DocumentsService {
   }
 
   async findAll(
-    queryParams, 
+    queryParams,
   ):Promise<Documents[] | string> {
     const query = this.queryHelper(queryParams)
     return this.documentsRepository.find({
@@ -84,14 +84,14 @@ export class DocumentsService {
     });
   }
 
-  
+
 
   async findOneOrFail(id: number,queryParams):Promise<Documents | null> {
     try {
       const query = this.queryHelper(queryParams)
       return await this.documentsRepository.findOneOrFail({
         ...query,
-        where: { documents_id: id },
+        where: { document_id: id },
       });
     } catch (error) {
       throw new NotFoundException(`Document with ID ${id} not found`);

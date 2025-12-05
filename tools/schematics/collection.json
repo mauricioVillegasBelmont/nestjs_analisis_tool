@@ -1,11 +1,11 @@
 {
-  "$schema": "../../node_modules/@angular-devkit/schematics/collection-schema.json",
-  "schematics": {
-    "type-orm-generator": {
-      "description": "Genera un archivo .entity.ts y .providers.ts con TypeORM",
-      "factory": "./typeOrmGenerator/index#typeOrmGenerator",
-      "schema": "./typeOrmGenerator/schema.json",
-      "aliases": ["orm-generator", "typeorm-generator"]
+    "$schema": "../../node_modules/@angular-devkit/schematics/collection-schema.json",
+    "schematics": {
+        "type-orm-generator": {
+            "description": "Genera un archivo .entity.ts y .providers.ts con TypeORM",
+            "factory": "./typeOrmGenerator/index#typeOrmGenerator",
+            "schema": "./typeOrmGenerator/schema.json",
+            "aliases": ["orm-generator", "typeorm-generator"]
+        }
     }
-  }
 }

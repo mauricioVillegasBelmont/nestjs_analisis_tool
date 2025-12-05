@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { ExternalAssetsService } from './external_assets.service';
+import { ExternalAssetsService } from 'documents_environment/external_assets/external_assets.service';
 
 describe('ExternalAssetsService', () => {
   let service: ExternalAssetsService;

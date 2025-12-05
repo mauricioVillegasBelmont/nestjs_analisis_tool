@@ -1,4 +1,4 @@
 import { PartialType } from '@nestjs/swagger';
-import { CreateLabelDto } from './create-label.dto';
+import { CreateLabelDto } from 'documents_environment/labels/dto/create-label.dto';
 
 export class UpdateLabelDto extends PartialType(CreateLabelDto) {}

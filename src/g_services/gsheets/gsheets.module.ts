@@ -1,17 +1,12 @@
 import { Module } from '@nestjs/common';
-import { GsheetsController } from './gsheets.controller';
-import { GsheetsService } from './gsheets.service';
+import { GsheetsController } from 'g_services/gsheets/gsheets.controller';
+import { GsheetsService } from 'g_services/gsheets/gsheets.service';
 
-
-import { GAuthModule } from 'src/g_services/g_auth/g_auth.module';
+import { GAuthModule } from 'g_services/g_auth/g_auth.module';
 
 @Module({
-  imports:[
-    GAuthModule,
-  ],
-  providers:[
-    GsheetsService,
-  ],
-  controllers:[GsheetsController],
+  imports: [GAuthModule],
+  providers: [GsheetsService],
+  controllers: [GsheetsController],
 })
 export class GsheetsModule {}

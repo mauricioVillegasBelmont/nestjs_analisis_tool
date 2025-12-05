@@ -1,7 +1,7 @@
 import { Body, Controller, HttpStatus, Post } from '@nestjs/common';
-import { IAService } from './ia_service.service';
-import { ApiResponse } from 'src/common/interfaces/response.interface';
-import { IAConfig } from './factory/ia_service.types';
+import { IAService } from 'ia_service/ia_service.service';
+import { ApiResponse } from 'common/interfaces/response.interface';
+import { IAConfig } from 'ia_service/factory/ia_service.types';
 
 interface IAServiceResponce{
   body?:{[key:string]:any} | any;
@@ -20,7 +20,7 @@ export class IaServiceController {
         system_role: ia_role,
         max_tokens: 1000,
       }
-      
+
       const response = await this.iaService.query(query,config)
       const body = this.iaService.cleanResponse({...response})
 
@@ -54,7 +54,7 @@ export class IaServiceController {
         max_tokens: 4000,
         temperature: 0.3,
       }
-      
+
       const response = await this.iaService.query(query,config)
       const body = this.iaService.cleanResponse({...response})
 

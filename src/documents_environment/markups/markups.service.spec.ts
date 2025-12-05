@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { MarkupsService } from './markups.service';
+import { MarkupsService } from 'documents_environment/markups/markups.service';
 
 describe('MarkupsService', () => {
   let service: MarkupsService;

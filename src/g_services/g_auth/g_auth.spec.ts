@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { GAuth } from './g_auth';
+import { GAuth } from 'g_auth';
 
 describe('GAuth', () => {
   let provider: GAuth;

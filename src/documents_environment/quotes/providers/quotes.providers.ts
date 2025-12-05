@@ -1,6 +1,6 @@
 
 import { DataSource } from 'typeorm';
-import { Quotes } from './quotes.entity';
+import { Quotes } from '../entities/quotes.entity';
 
 export const quotesProviders = [
   {

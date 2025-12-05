@@ -1,13 +1,13 @@
 import { Module } from '@nestjs/common';
-import { LabelsService } from './labels.service';
-import { LabelsController } from './labels.controller';
+import { LabelsService } from 'documents_environment/labels/labels.service';
+import { LabelsController } from 'documents_environment/labels/labels.controller';
+import { labelsProviders } from 'documents_environment/labels/providers/labels.providers';
 
-import { DatabaseModule } from 'src/database/database.module';
-import { label_referencesProviders, labelsProviders } from './labels.providers';
+import { DatabaseModule } from 'database/database.module';
 
 @Module({
   imports: [DatabaseModule],
   controllers: [LabelsController],
-  providers: [...labelsProviders, ...label_referencesProviders, LabelsService],
+  providers: [...labelsProviders, LabelsService],
 })
 export class LabelsModule {}

@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { MarkupsController } from './markups.controller';
-import { MarkupsService } from './markups.service';
+import { MarkupsController } from 'documents_environment/markups/markups.controller';
+import { MarkupsService } from 'documents_environment/markups/markups.service';
 
 describe('MarkupsController', () => {
   let controller: MarkupsController;

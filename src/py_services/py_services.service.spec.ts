@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { PyServicesService } from './py_services.service';
+import { PyServicesService } from 'py_services/py_services.service';
 
 describe('PyServicesService', () => {
   let service: PyServicesService;

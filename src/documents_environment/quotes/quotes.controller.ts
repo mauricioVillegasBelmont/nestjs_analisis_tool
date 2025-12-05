@@ -1,7 +1,15 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
-import { QuotesService } from './quotes.service';
-import { CreateQuoteDto } from './dto/create-quote.dto';
-import { UpdateQuoteDto } from './dto/update-quote.dto';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
+import { QuotesService } from 'documents_environment/quotes/quotes.service';
+import { CreateQuoteDto } from 'documents_environment/quotes/dto/create-quote.dto';
+import { UpdateQuoteDto } from 'documents_environment/quotes/dto/update-quote.dto';
 
 @Controller('quotes')
 export class QuotesController {

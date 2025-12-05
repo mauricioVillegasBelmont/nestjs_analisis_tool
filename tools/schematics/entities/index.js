@@ -1,16 +1,23 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.typeOrmGenerator = exports.typeOrmProviders = exports.typeOrmEntities = void 0;
+exports.typeOrmEntities = typeOrmEntities;
+exports.typeOrmProviders = typeOrmProviders;
+exports.typeOrmGenerator = typeOrmGenerator;
+const path = require("path");
 const schematics_1 = require("@angular-devkit/schematics");
+const schema_json_1 = __importDefault(require("./schema.json"));
+console.log(schema_json_1.default);
 function capitalize(s) {
     return String(s[0]).toUpperCase() + String(s).slice(1);
 }
 function typeOrmEntities(options) {
     return (tree, _context) => {
         const { name } = options;
-        tree.create(`src/${name}/${name}.entity.ts`, `
+        tree.create(`src/${name}/test/${name}.entity.ts`, `
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
-
 @Entity()
 export class ${capitalize(name)} {
   @PrimaryGeneratedColumn()
@@ -20,11 +27,10 @@ export class ${capitalize(name)} {
         return tree;
     };
 }
-exports.typeOrmEntities = typeOrmEntities;
 function typeOrmProviders(options) {
     return (tree, _context) => {
         const { name } = options;
-        tree.create(`src/${name}/${name}.providers.ts`, `
+        tree.create(`src/${name}/test/${name}.providers.ts`, `
 import { DataSource } from 'typeorm';
 import { ${capitalize(name)} } from './${name}.entity';
 
@@ -39,11 +45,10 @@ export const ${name}Providers = [
         return tree;
     };
 }
-exports.typeOrmProviders = typeOrmProviders;
 function typeOrmGenerator(options) {
     return (0, schematics_1.chain)([
         typeOrmEntities(options),
         typeOrmProviders(options)
     ]);
 }
-exports.typeOrmGenerator = typeOrmGenerator;
+//# sourceMappingURL=index.js.map

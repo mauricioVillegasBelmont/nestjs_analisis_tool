@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { CreateMarkupDto } from './dto/create-markup.dto';
-import { UpdateMarkupDto } from './dto/update-markup.dto';
+import { CreateMarkupDto } from 'documents_environment/markups/dto/create-markup.dto';
+import { UpdateMarkupDto } from 'documents_environment/markups/dto/update-markup.dto';
 
 @Injectable()
 export class MarkupsService {
